@@ -1,5 +1,5 @@
 class Post < ActiveRecord::Base
-  validates :name, presence: true
-  validates :name, uniqueness: true
+  validates :title, presence: true
+  validates :content, length: { minimum: 250 }
   validates :phone_number, length: { is: 10 }
 end
