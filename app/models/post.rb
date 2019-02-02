@@ -6,13 +6,9 @@ class Post < ActiveRecord::Base
   validates :check_clickbait
 
   def check_clickbait
-    phrases = ["Won't Believe", "Secret", "Top", "Guess"]
-    phrases.each do |phrase|
-      if title.include?(phrase)
-
+    if !title.include?("Won't Believe") && !title.include?("Secret") && !title.include?("Guess") && !title.include?("Top")
+        errors.add(:title, "The title isn't clickbaity")
       end
-    end
-    errors.add(:title, "is not sufficiently clickbait-y")
   end
 
 end
