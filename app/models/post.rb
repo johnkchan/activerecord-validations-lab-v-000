@@ -10,6 +10,7 @@ class Post < ActiveRecord::Base
     phrases.each do |phrase|
       if title.include?(phrase)
         errors.add(:title, "is not sufficiently clickbait-y")
+      end
     end
   end
 
