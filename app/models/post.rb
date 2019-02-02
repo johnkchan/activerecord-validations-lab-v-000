@@ -9,9 +9,10 @@ class Post < ActiveRecord::Base
     phrases = ["Won't Believe", "Secret", "Top", "Guess"]
     phrases.each do |phrase|
       if title.include?(phrase)
-        errors.add(:title, "is not sufficiently clickbait-y")
+
       end
     end
+    errors.add(:title, "is not sufficiently clickbait-y")
   end
 
 end
